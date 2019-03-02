@@ -52,24 +52,28 @@ h5 {
     padding: 70px 30px;
 }
 
+.login-box.resetpsd {
+    height: 280px;
+}
+
 .login-box input[type ="submit"] {
     border: none;
     outline: none;
     height: 40px;
     width: 200px;
     margin-left: 50px;
-    border: none;
+    border: 1px solid white;
     border-radius: 20px;
     opacity: 1;
     font-size: 20px;
-    background: #ffff;
-    color:#081f44;
+    background: black;
+    color: white;
 }
 
 .login-box input[type ="submit"]:hover {
     cursor: pointer;
-    background:#3cf30f;
-    color: #ffffff;
+    background: white;
+    color: black;
 }
 
 .value {
@@ -114,13 +118,7 @@ h5 {
   height: 50px;
 }
 
-#footer ul {
-    padding: 5px;
-    list-style-type: none;
-    text-align: center;
-    margin: 10px;
-    border-radius: 5px;
-}
+
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: rgb(150, 145, 145);
@@ -136,25 +134,7 @@ h5 {
   }
 
 
-#footer ul li {
-       display: inline;
-}
 
-#footer ul li a {
-         text-decoration: none;
-         text-transform: uppercase;
-         font-family: Arial;
-         font-size: 95%;
-         font-weight: bolder;
-         padding: .2em 1em;
-         color: #f3f4f2;
-         background-color: #5d5e5c; 
-}
-
-#footer ul li a:hover {
-               color: #050a42;
-               background-color: #04ef0c; 
-}
 
 .copyright {
     text-align: center;

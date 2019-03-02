@@ -27,7 +27,7 @@ body {
     border: 1px solid #fff;
     border-radius: 20px;
     margin: auto;
-    background: rgba(34, 27, 27, 0.452);
+    background: black;
     box-sizing: border-box;
     padding: 40px;
     color: #fff;
@@ -35,11 +35,15 @@ body {
     margin-bottom: 50px;
 }
 
-.value {
-    font-family: sans-serif;
-    font-weight: bolder;
+.wrap.confirmreset {
+    height: 400px;
 }
 
+
+#theForm[type="submit"] {
+    color: white;
+    background: black;
+}
 h1 {
     text-align: center;
     font-size: 22px;
@@ -63,21 +67,21 @@ input[type = "text"], [type = "password"] {
 input[type = "submit"] {
     width: 100%;
     box-sizing: border-box;
-    padding: 10px 0;
+    padding: 5px 0;
     margin-top: 30px;
     outline: none;
-    border: none;
+    border: 1px solid white;
     border-radius: 20px;
     opacity: 1;
     font-size: 20px;
-    background: #ffff;
-    color:#081f44;
+    background: black;
+    color: white;
 }
 
 input[type ="submit"]:hover {
     cursor: pointer;
-    background:#3cf30f;
-    color: #ffffff;
+    background: white;
+    color: black;
 }
 
 a {
@@ -85,7 +89,7 @@ a {
     text-align: center;
     font-size: 14px;
     color: #fff;
-    margin: 50px;
+    margin: 5px;
 }
 
 a:hover {
