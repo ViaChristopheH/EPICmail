@@ -14,7 +14,7 @@ body {
 }
 
 #sidebar:hover {
-    background: green;
+    background: white;
     
 }
 
@@ -57,7 +57,7 @@ a {
 }
 
 a:hover {
-    background: green;
+    background: #6d6d6c;;
     color: white;
     font-weight: bolder;
 }

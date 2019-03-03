@@ -314,3 +314,52 @@ h4 {
     margin-bottom: -10px;
     margin-top: 20px;
 }
+
+#sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background: #0ce2d3;
+    left: 0px;
+    transition: all 500ms linear;
+    border-radius: 5px;
+}
+
+/* #sidebar:hover {
+    background: white;
+    color: #6d6d6c;
+} */
+
+#sidebar.active {
+    left: 0px;
+}
+
+#sidebar ul li {
+    color: white;
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.5);
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+#sidebar ul li:hover {
+    color: white;
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid white;
+    font-family: sans-serif;
+    font-weight: bold;
+    background:#6d6d6c; 
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    background: #6d6d6c;;
+    color: white;
+    font-weight: 300;
+}
