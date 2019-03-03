@@ -101,6 +101,7 @@ body {
     .value {
         font-family: sans-serif;
         font-weight: bolder;
+        
     }
 
     #reset {
@@ -249,6 +250,7 @@ a:hover {
     color: #ffff;
     padding: -45%;
     font-weight: 400;
+    margin: 0px 0px;
 }
 
 h2 {
@@ -294,4 +296,21 @@ h4 {
 .wrap input {
     width: 100%;
     margin-bottom: 20px;
+}
+
+#wrap-signup {
+    height: 450px;
+}
+
+#acc-create {
+    width: 150px;
+    margin-left: 5px;
+    margin-top: -10px;
+    font-size: 16px;
+    height: 25px;
+}
+
+#footer-copyr {
+    margin-bottom: -10px;
+    margin-top: 20px;
 }
