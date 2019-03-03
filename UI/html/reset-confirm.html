@@ -5,9 +5,34 @@
             EPIC Mail | Confirm password resetting
         </title>
         <link rel="stylesheet" type="text/css" href="../css/signup.css">
+        
     </head>
 
     <body>
+            <div id="header">
+                    <div class="epicicon"><img src="../images/email (1).svg">
+                      <h2> EPIC MAIL </h2> 
+                      <div class="searchbox">
+                       <input  type="text" name="" placeholder="Search in EPIC MAIL..."></a>
+                      </div>
+                          </div>
+                          <a href="#"><button class="search-btn">
+                            <i><img src="../images/searchIcon.png"></i>
+                         </button>
+                
+                         <nav>
+                          <form action="../html/login.html">
+                                  <input type="submit" name="submit" value="Login" class="value1">
+                          </form>
+                              
+                          <form action="../html/signup.html">
+                                  <input type="submit" name="submit" value="Signup" class="value2">
+                          </form>
+                
+                      </nav>
+                        
+                    </div>
+
         <div class="wrap confirmreset">
             <h1> Finish resetting your password</h1>
             <form id="theForm" action="" method="">
@@ -19,15 +44,21 @@
                 <!-- <input type="text" class = "placeholder" placeholder="Username..." required>
                 <input type="password" class = "placeholder" placeholder="Enter password..." required>
                 <input type="password" class = "placeholder" placeholder="Confirm password..." required> -->
-                <input type="submit"  value="Apply password reset" class="value">
+                <form action="../html/login.html">
+                    <input type="submit"  value="Apply changes" class="value" id="reset">
+                </form>
                 
                 <!-- <a href="./login.html"><h5>Already registered? Log in.</h5></a>
                 <a href="#"><h5>Aren't you registered yet? Create your account.</h5></a> -->
             </form>
 
         </div>
-       <p class="copyright">&copy; 2019 EPIC Mail. All rights reserved.</p> 
+        <div id="footer">
 
+            
+                <p class="copyright">&copy; 2019 EPIC Mail. All rights reserved.</p>
+                   
+               </div>
         
     </body>
 </html>

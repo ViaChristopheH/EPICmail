@@ -1,9 +1,145 @@
 body {
-    background: url(../images/download.jpg);
-    background-size: cover;
-    font-family: sans-serif;
+    background-color: #6d6d6c;
+    font-family: Verdana, Georgia;
+    font-size: 14px;
+    /*===font-size: 15px;===*/
+    margin: 0px;
 }
 
+#header {
+    background-color: #0ce2d3;
+    margin-bottom: 10px;
+    margin-top: 3px;
+    margin-left: 5px;
+    height: 90px;
+    width: 99.81%;
+    border-radius: 5px;
+    
+}
+
+.epicicon img {
+    height: 70px;
+    width: 70px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.searchbox {
+    margin-left: 382px;
+    margin-top: -55px;
+    height: 38px;
+    width: 700px;
+    background-color: #6d6d6c;
+    border-radius: 25px;
+    color: white;
+    border: 2px solid white;
+    
+}
+
+.searchbox input {
+    width: 710px;
+    height:44px;
+    color: white;
+    font-family: sans-serif;
+    outline: none;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    padding: 5px;
+    margin-top: -90px;
+    float: left;
+    margin-left: 5px;
+    }
+
+    button {
+        background: transparent;
+        width: 40px;
+        height: 38px;
+        float: right;
+        margin-right: 279px;
+        margin-top: -80px;
+        border: none;
+        background: #0dd4e2;
+        outline: none; 
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px; 
+    
+    }
+    .search-btn img {
+        height: 25px;
+        width: 25px;
+        float: right;
+        margin-left: 200px;
+    }
+    
+    nav {
+        background: transparent;
+        border: 0px solid white;
+        border-radius: 5px;
+        height: 50px;
+        width: 300px;
+        float: right;
+        margin-left: 5px;
+        margin-top: -80px;
+        
+    }
+
+    h2 {
+        color: white;
+        font-weight: bolder;
+        font-size: 45px;
+        float: right;
+        margin-right: 990px;
+        margin-top: 15px;
+        padding: 2px 2px 2px 2px;
+    }
+    
+    h3 {
+        position: relative;
+    }
+
+    .value {
+        font-family: sans-serif;
+        font-weight: bolder;
+    }
+
+    #reset {
+        width: 70%;
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+
+    .value1 {
+        font-family: sans-serif;
+        font-weight: bolder;
+        padding-top: 5px;
+        float: left;
+        margin-left: 45px;
+        margin-top: 0px;
+        width: 100px;
+        background: #0dd4e2;
+        border-radius: 25px;
+        height: 40px;
+        color: white;
+        font-size: 18px;
+        border: 1.5px solid white
+    }
+    
+    .value2 {
+        font-family: sans-serif;
+        font-weight: bolder;
+        padding-top: 5px;
+        float: right;
+        margin-right: 40px;
+        margin-top: 0px;
+        width: 100px;
+        background: #0dd4e2;
+        border-radius: 25px;
+        height: 40px;
+        color: white;
+        font-size: 18px;
+        border: 1.5px solid white
+    }
 .placeholder {
     color: black;
 }
@@ -22,17 +158,20 @@ body {
   }
 
 .wrap {
-    max-width: 350px;
-    height: 560px;
-    border: 1px solid #fff;
-    border-radius: 20px;
-    margin: auto;
-    background: black;
-    box-sizing: border-box;
-    padding: 40px;
+    width: 350px;
+    height: 400px;
+    border: 1px solid white;
+    border-radius: 15px;
+    background: rgb(90, 79, 79);
     color: #fff;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    top: 57%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .wrap.confirmreset {
@@ -40,17 +179,7 @@ body {
 }
 
 
-#theForm[type="submit"] {
-    color: white;
-    background: black;
-}
-h1 {
-    text-align: center;
-    font-size: 22px;
-    color: white;
-}
-
-input[type = "text"], [type = "password"] {
+.wrap input[type = "text"], [type = "password"] {
     width: 100%;
     box-sizing: border-box;
     padding: 12px 5px;
@@ -64,21 +193,23 @@ input[type = "text"], [type = "password"] {
     font-weight: bold;
 }
 
-input[type = "submit"] {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 5px 0;
-    margin-top: 30px;
+.wrap input[type = "submit"] {
+    border: none;
     outline: none;
+    height: 40px;
+    width: 200px;
+    margin-left: 50px;
     border: 1px solid white;
     border-radius: 20px;
     opacity: 1;
     font-size: 20px;
-    background: black;
+    background: #0dd4e2;
     color: white;
+    padding: -20px;
+    margin-bottom: 0%;
 }
 
-input[type ="submit"]:hover {
+.wrap input[type ="submit"]:hover {
     cursor: pointer;
     background: white;
     color: black;
@@ -102,4 +233,65 @@ a:hover {
     font-family: sans-serif;
     font-weight: bold;
     color: white;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    margin-top: 0px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 22px;
+    color: #ffff;
+    padding: -45%;
+    font-weight: 400;
+}
+
+h2 {
+    color: white;
+    font-weight: bolder;
+    font-size: 45px;
+    float: right;
+    margin-right: 990px;
+    margin-top: 15px;
+    padding: 2px 2px 2px 2px;
+}
+
+h3 {
+    position: relative;
+}
+h5 {
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 200;
+    text-decoration: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+h4 {
+    text-align: center;
+    color: white;
+    font-weight: 200;
+    text-decoration: none;
+    padding-top: -100%;
+    margin-bottom: 0%;
+
+}
+
+.wrap p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.wrap input {
+    width: 100%;
+    margin-bottom: 20px;
 }
