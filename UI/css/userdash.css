@@ -1,0 +1,77 @@
+body {
+    background: url(../images/download.jpg);
+    background-size: cover;
+}
+    
+#sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background: black;
+    left: 0px;
+    transition: all 500ms linear;
+    border-radius: 5px;
+}
+
+#sidebar:hover {
+    background: white;
+    
+}
+
+#sidebar.active {
+    left: 0px;
+}
+
+#sidebar ul li {
+    color: white;
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.5);
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+#sidebar.toggleBtn {
+    position: absolute;
+    left: 230px;
+    top: 20px;
+}
+
+#sidebar.toggleBtn span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: black;
+    margin: 5px 0px;
+}
+
+.dasheader {
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    background: #6d6d6c;;
+    color: white;
+    font-weight: bolder;
+}
+
+body.search-box {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+.search-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
