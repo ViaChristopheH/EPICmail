@@ -1,23 +1,30 @@
 import express from 'express';
-import meetupfx from '../controllers/mailControllers';
-import meetupRsvpsController from '../controllers/meetupRsvpsController';
+import messagefx from '../controllers/'
 
 const route = express.Router();
 
-// create a meetup
-route.post('/', meetupfx.createMeetup);
-// get meetup
-route.get('/', meetupfx.fetchAllMeetups);
-//get upcoming meetup
-route.get('/upcoming', meetupfx.fetchUpcomingMeetups);
-// get meetup by id
-route.get('/:id', meetupfx.fetchAmeetup);
-// create a question
-route.post('/:id/questions', meetupfx.meetupQuestions);
-// create Rsvps 
-route.post('/:id/rsvps', meetupRsvpsController.bookingRsvps);
-// Edit Rsvps
-route.put('/:id/rsvps', meetupRsvpsController.editingRsvps);
-// fetch meetup questions
+// create/send an email
+route.post('/', messagefx.sendEmail);
+
+// create a user account
+route.post('/', messagefx.signUp);
+
+// Login a user
+route.post('/', messagefx.logIn );
+
+// Fetch all received emails
+route.get('/', messagefx.receivedEmails );
+
+// Fetch all unread received emails
+route.get('/', messagefx.unreadEmails );
+
+// Fetch all sent emails
+route.get('/', messagefx.sentEmails  );
+
+// Fetch a specific email record
+route.get('/:id', messagefx.specificEmails);
+
+// Delete a specific email record
+route.delete('/:id', messagefx.deleteEmail );
 
 export default route;
