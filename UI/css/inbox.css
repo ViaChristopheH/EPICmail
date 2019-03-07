@@ -1,0 +1,64 @@
+body {
+ background-color: #6d6d6c;
+ font-family: Verdana, Georgia;
+}
+
+.messagecontainer {
+    background: rgb(90, 79, 79);
+    height: 490px;
+    width: 900px;
+    margin-left: 205px;
+    border: 1px solid white;
+}
+
+.messagecontainer div.messageHeader {
+    background: #6d6d6c;
+    border-bottom: 1px solid white;
+    height: 50px;
+    width: 895px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    column-count: 4;
+    column-gap: 15px;
+    column-rule-color: lightblue;
+    column-fill: white;
+
+}
+
+.messagecontainer div.message1 {
+    background: #6d6d6c;
+    border-bottom: 1px solid white;
+    height: 50px;
+    width: 895px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    border-radius: 5px;
+
+}
+
+.messagecontainer div.message2 {
+    background: #6d6d6c;
+    border-bottom: 1px solid white;
+    height: 50px;
+    width: 895px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    border-radius: 5px;
+
+}
+
+.messagecontainer div.message3 {
+    background: #6d6d6c;
+    border-bottom: 1px solid white;
+    height: 50px;
+    width: 895px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+
+}
+
+#chk-box {
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+}

@@ -1,15 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html>
-    <head>
-        <title>
-            EPIC MAIL| Inbox
-        </title>
-        <link rel="stylesheet" type="text/css" href="../css/inbox.css">
-    </head>
-    <body>
-        <div class="inbox">
 
-        </div>
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/signup.css">
+  <link rel="stylesheet" type="text/css" href="../css/inbox.css">
 
-    </body>
+<title>
+EPIC MAIL| Inbox
+</title>
+
+</head>
+
+<body>
+        <div id="header">
+                <div class="epicicon"><img src="../images/email (1).svg">
+                  <h2> EPIC MAIL </h2> 
+                  <div class="searchbox">
+                    <input  type="text" name="" placeholder="Search in EPIC MAIL...">
+                  </div>
+                      </div>
+                      <button class="search-btn"> 
+                        <i><img src="../images/searchIcon.png"></i>
+                     </button>
+                                   
+                </div>
+
+                                     
+                                    <div id="sidebar">
+                                            <div class="toggleBtn" onclick="toggleSidebar()">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                            <ul>
+                                                
+                                                <li><a href="">Home</a></li>
+                                                <li><a href="">Compose message</a></li>
+                                                <li><a href="">Inbox</a></li>
+                                                <li><a href="">Sent</a></li>
+                                                <li><a href="">Draft</a></li>
+                                                <li><a href="">Outbox</a></li>
+                                                <li><a href="">Groups</a></li>
+                                                <li><a href="">Logout</a></a></li>
+                                                
+                                            </ul>
+                                        
+                                        </div>
+
+                                    <div class="messagecontainer">
+                                        <div class="messageHeader">
+                                            <h4>Sent By</h4>
+                                            <h4>Message</h4>
+                                            <h4>Time</h4>
+                                            <h4>Action</h4>
+                                        </div>
+                                        <div class="message1"><input type="checkbox" id="chk-box"></div>
+                                        <div class="message2"><input type="checkbox" id="chk-box"></div>
+                                        <div class="message3"><input type="checkbox" id="chk-box"></div>
+                                        <div class="message1"><input type="checkbox" id="chk-box"></div>
+                                        <div class="message2"><input type="checkbox" id="chk-box"></div>
+                                        <div class="message3"><input type="checkbox" id="chk-box"></div>
+                                        <div class="message1"><input type="checkbox" id="chk-box"></div>
+                                        <div class="message2"><input type="checkbox" id="chk-box"></div>
+                                      
+
+
+
+                                    </div>
+                                    <div id="footer">
+
+            
+                                            <p class="copyright">&copy; 2019 EPIC Mail. All rights reserved.</p>
+                                               
+                                           </div>
+                                    
+</body>    
+
 </html>
