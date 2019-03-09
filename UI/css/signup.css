@@ -1,3 +1,5 @@
+/* =======================================THE PAGE BODY============================================= */
+
 body {
     background-color: #6d6d6c;
     font-family: Verdana, Georgia;
@@ -5,6 +7,8 @@ body {
     /*===font-size: 15px;===*/
     margin: 0px;
 }
+
+/* ===================================THE CONTENT HEADER============================================= */
 
 #header {
     background-color: #0ce2d3;
@@ -16,6 +20,8 @@ body {
     border-radius: 5px;
     
 }
+
+/* ========================================THE ICONS&IMAGES================================================  */
 
 .epicicon img {
     height: 70px;
@@ -46,7 +52,7 @@ body {
     background: transparent;
     border: none;
     padding: 5px;
-    margin-top: -90px;
+    margin-top: -95px;
     float: left;
     margin-left: 5px;
     }
@@ -57,7 +63,7 @@ body {
         height: 38px;
         float: right;
         margin-right: 279px;
-        margin-top: -80px;
+        margin-top: -88px;
         border: none;
         background: #0dd4e2;
         outline: none; 
@@ -69,7 +75,7 @@ body {
         height: 25px;
         width: 25px;
         float: right;
-        margin-left: 200px;
+        margin-left: 250px;
     }
     
     nav {
@@ -84,19 +90,52 @@ body {
         
     }
 
+    /* ======================================THE TEXT HEADINGS===================================== */
+
+    h1 {
+        text-align: center;
+        font-size: 20px;
+        color: #ffff;
+        padding: -45%;
+        font-weight: 400;
+        margin: 0px 25px;
+    }
+
     h2 {
         color: white;
         font-weight: bolder;
         font-size: 45px;
         float: right;
-        margin-right: 990px;
-        margin-top: 15px;
+        margin-right: 1005px;
+        margin-top: 23px;
         padding: 2px 2px 2px 2px;
     }
-    
     h3 {
         position: relative;
     }
+    
+    h4 {
+        text-align: center;
+        color: white;
+        font-weight: 200;
+        text-decoration: none;
+        padding-top: -100%;
+        margin-bottom: 0%;
+    
+    }
+
+    h5 {
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 15px;
+        text-align: center;
+        font-weight: 200;
+        text-decoration: none;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    /* =========================================THE BUTTONS=================================================== */
 
     .value {
         font-family: sans-serif;
@@ -116,7 +155,7 @@ body {
         padding-top: 5px;
         float: left;
         margin-left: 45px;
-        margin-top: 0px;
+        margin-top: -7px;
         width: 100px;
         background: #0dd4e2;
         border-radius: 25px;
@@ -141,6 +180,8 @@ body {
         font-size: 18px;
         border: 1.5px solid white
     }
+
+    /* ===============================THE PLACEHOLDER====================================================== */
 .placeholder {
     color: black;
 }
@@ -160,7 +201,7 @@ body {
 
 .wrap {
     width: 350px;
-    height: 400px;
+    height: 450px;
     border: 1px solid white;
     border-radius: 15px;
     background: rgb(90, 79, 79);
@@ -179,7 +220,7 @@ body {
     height: 400px;
 }
 
-
+/* ========================================THE TEXT INPUTS============================================== */
 .wrap input[type = "text"], [type = "password"] {
     width: 100%;
     box-sizing: border-box;
@@ -244,48 +285,7 @@ a:hover {
     margin-top: 0px;
   }
 
-  h1 {
-    text-align: center;
-    font-size: 22px;
-    color: #ffff;
-    padding: -45%;
-    font-weight: 400;
-    margin: 0px 0px;
-}
-
-h2 {
-    color: white;
-    font-weight: bolder;
-    font-size: 45px;
-    float: right;
-    margin-right: 990px;
-    margin-top: 15px;
-    padding: 2px 2px 2px 2px;
-}
-
-h3 {
-    position: relative;
-}
-h5 {
-    color: #fff;
-    font-family: sans-serif;
-    font-size: 15px;
-    text-align: center;
-    font-weight: 200;
-    text-decoration: none;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
-h4 {
-    text-align: center;
-    color: white;
-    font-weight: 200;
-    text-decoration: none;
-    padding-top: -100%;
-    margin-bottom: 0%;
-
-}
+ 
 
 .wrap p {
     margin: 0;
@@ -324,11 +324,6 @@ h4 {
     transition: all 500ms linear;
     border-radius: 5px;
 }
-
-/* #sidebar:hover {
-    background: white;
-    color: #6d6d6c;
-} */
 
 #sidebar.active {
     left: 0px;
@@ -386,16 +381,13 @@ a:hover {
     color: #fff;
     text-decoration: none;
 }
-h1 {
-    text-align: center;
-    margin-top: -10%;
-}
+
 
 #theForm {
     margin-top: 5px;
 }
 
-.newmessage textarea {
+.newmessage textarea 
     border: 1px solid white;
     border-bottom: 1px solid #fff;
     border-radius: 5px;
