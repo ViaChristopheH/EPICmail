@@ -38,8 +38,16 @@ body {
     transition: 0.5s;
 }
 
-
-
 .column:hover {
     background: #03d6f1;
+}
+
+.msgsubject {
+    background: transparent;
+    height: 10%;
+    width: 100%;
+    border-bottom: 1px solid white;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0; 
 }

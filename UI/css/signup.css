@@ -387,7 +387,7 @@ a:hover {
     margin-top: 5px;
 }
 
-.newmessage textarea 
+.newmessage textarea {
     border: 1px solid white;
     border-bottom: 1px solid #fff;
     border-radius: 5px;
