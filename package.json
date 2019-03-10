@@ -1,0 +1,31 @@
+{
+  "name": "epicmail",
+  "version": "1.0.0",
+  "description": "This is a web application that helps people exchange messages/information over the internet",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/register": "^7.0.0",
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "joi": "^14.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node --require @babel/register index.js",
+    "local": "nodemon --exec babel-node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViaChristopheH/epicMAIL.git"
+  },
+  "author": "ViaChristopheH",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViaChristopheH/epicMAIL/issues"
+  },
+  "homepage": "https://github.com/ViaChristopheH/epicMAIL#readme"
+}
