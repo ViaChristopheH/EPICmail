@@ -13,6 +13,9 @@ body {
      border-radius: 5px;
 }
 
+.epicicon{
+  width: 30%;
+}
 .epicicon img {
   height: 70px;
   width: 70px;
@@ -25,7 +28,7 @@ h2 {
   font-weight: bolder;
   font-size: 45px;
   float: right;
-  margin-right: 990px;
+  margin-right: 16%;
   margin-top: 15px;
   padding: 2px 2px 2px 2px;
 }
@@ -34,10 +37,12 @@ h3 {
   position: relative;
 }
 
+
 p {
+  font-family: sans-serif;
   padding: 10px;
-  line-height: 20px;
-  font-weight: 600;
+  font-weight: bold;
+  font-size: 18px;
   text-shadow: #535958;
 }
 
@@ -116,19 +121,18 @@ nav {
 
 .value1 {
   font-family: sans-serif;
-  font-weight: bolder;
-  padding-top: 5px;
-  float: left;
+  font-weight: bold;
   margin-left: 45px;
-  margin-top: 0px;
-  width: 100px;
+  width: 30%;
+  padding:12px;
   background: #0dd4e2;
-  border-radius: 25px;
+  border-radius: 8px;
   height: 40px;
   color: white;
   font-size: 18px;
   border: 1.5px solid white;
   outline: none;
+  text-decoration: none;
 }
 
 .value1:hover {
@@ -160,14 +164,14 @@ nav {
 .paragraph{
   background: #0dd4e2;
   border: 1px solid white;
-  height: 300px;
-  width: 300px;
+  height: 60%;
+  width: 50%;
   border-radius: 5px;
   color: white;
   text-align: center;
   font-family: sans-serif;
+  margin: auto;
   margin-top: 10%;
-  margin-left: 39%;
   text-decoration: none;
   
 }
