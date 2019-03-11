@@ -23,7 +23,8 @@
     "eslint-plugin-standard": "^4.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --require @babel/register index.js",
+    "local": "nodemon --exec babel-node index.js"
   },
   "repository": {
     "type": "git",
