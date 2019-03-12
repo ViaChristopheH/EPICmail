@@ -8,7 +8,7 @@ app.post('/api/v1/users', (req, res) => {
     res.send(user)
 });
 
-// POST/ADD a user (create an account)
+// POST/ADD a user (create an account/signup)
 
 app.post('/api/v1/users', (req, res) => {
     

@@ -1,0 +1,61 @@
+#header {
+    background-color: #0ce2d3;
+    margin: 10px;
+    height: 90px;
+    border-radius: 5px;
+}
+
+.epicicon{
+    width: 30%;
+  }
+  .epicicon img {
+    height: 70px;
+    width: 70px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  
+  h2 {
+    color: white;
+    font-weight: bolder;
+    font-size: 45px;
+    float: right;
+    margin-right: 10%;
+    margin-top:4%;
+    padding: 2px 2px 2px 2px;
+  }
+
+  nav {
+    background: transparent;
+    border: 0px solid white;
+    border-radius: 5px;
+    height: 50px;
+    width: 300px;
+    float: right;
+    margin-left: 5px;
+    margin-top: -80px;
+    
+  }
+  
+  .value1 {
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-left: 45px;
+    width: 30%;
+    padding:12px;
+    background: #0dd4e2;
+    border-radius: 8px;
+    height: 40px;
+    color: white;
+    font-size: 18px;
+    border: 1.5px solid white;
+    outline: none;
+    text-decoration: none;
+    
+  }
+  
+  .value1:hover {
+    background: white;
+    color: black;
+  }
+  

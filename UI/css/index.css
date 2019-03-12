@@ -2,7 +2,6 @@ body {
   background-color: #6d6d6c;
   font-family: Verdana, Georgia;
   font-size: 14px;
-  /*===font-size: 15px;===*/
   margin: 0px;
 }
 
@@ -28,8 +27,8 @@ h2 {
   font-weight: bolder;
   font-size: 45px;
   float: right;
-  margin-right: 16%;
-  margin-top: 15px;
+  margin-right: 10%;
+  margin-top:4%;
   padding: 2px 2px 2px 2px;
 }
 
@@ -133,6 +132,7 @@ nav {
   border: 1.5px solid white;
   outline: none;
   text-decoration: none;
+  
 }
 
 .value1:hover {
