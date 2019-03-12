@@ -3,8 +3,11 @@
 <html>
 
 <head>
-  <link rel="stylesheet" type="text/css" href="../css/login.css">
-  <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+  <!-- <link rel="stylesheet" href="../css/index.css"> -->
+  
+
 
 <title>
 EPIC MAIL| Login
@@ -13,26 +16,27 @@ EPIC MAIL| Login
 </head>
 
 <body>
-        <div id="header">
-                <div class="epicicon"><img src="../images/email (1).svg">
-                  <h2> EPIC MAIL </h2> 
-                      </div>
-
-                      <nav>
-                        <a href="./signup.html" class = "value1"> Signup</a>
-              
-                    </nav>
-                    
-                </div>
-
+    <div id="header">
+        <div class="epicicon"><img src="../images/email (1).svg">
+          <h2> EPIC MAIL </h2> 
+              </div>
+    
+             <nav>
+              <!-- <a href="./html/login.html" class = "value1"> Login</a> -->
+              <a href="../html/signup.html" class = "value1"> Signup</a>
+    
+          </nav>
+            
+        </div>
+      
                 <div class="login-box">
                         <h1>LogIn to EPIC Mail</h1>
-                        <form id="theForm" action="" method="">
+                        <form id="theForm" action="../html/userdash.html" method="">
                             <p>Username</p>
                             <input type="text" name="username" placeholder="Enter Username or Email">
                             <p>Password</p>
                             <input type="password" name="password" placeholder="Enter password"> <br>
-                            <input type="submit" name="submit" value="LogIn" class="value">
+                            <a href="./html/login.html" class = "value1" id="login-btn"> Login</a>
                             <a href="../html/resetpsd.html" class="psd-reset"><h4>Forgot your password?</h4> </a> <br>
                             <a href="#"><h5>Aren't you registered yet? Create your account.</h5></a>
                         </form>

@@ -1,37 +1,86 @@
 body {
-    background: url(../images/download.jpg);
-    background-size: cover;
+    background-color: #6d6d6c;
+    font-family: Verdana, Georgia;
+    font-size: 14px;
+    margin: 0px;
+}
+
+nav {
+    background: transparent;
+    border: 0px solid white;
+    border-radius: 5px;
+    height: 50px;
+    width: 300px;
+    float: right;
+    margin-left: 5px;
+    margin-top: -80px;
+    
+}
+
+#sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background: #0ce2d3;
+    left: 0px;
+    transition: all 500ms linear;
+    border-radius: 5px;
+}
+
+/* #sidebar:hover {
+    background: white;
+    color: #6d6d6c;
+} */
+
+#sidebar.active {
+    left: 0px;
+}
+
+#sidebar ul li {
+    color: white;
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.5);
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+#sidebar ul li:hover {
+    color: white;
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid white;
+    font-family: sans-serif;
+    font-weight: bold;
+    background:#6d6d6c; 
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    background: #6d6d6c;;
+    color: white;
+    font-weight: 300;
 }
 
 .newmessage {
     width: 650px;
-    height: 500px;
+    height: 455px;
     border: 1px solid white;
     border-radius: 15px;
-    background: black;
+    background: rgb(90, 79, 79);
     color: #fff;
-    top: 50%;
+    top: 55%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
-    padding: 70px 30px;
+    padding: 10px 30px;
     font-weight: bolder;
     opacity: 0.9;
-}
-
-.menus {
-    background: black;
-    color: #fff;
-    text-decoration: none;
-}
-h1 {
-    text-align: center;
-    margin-top: -10%;
-}
-
-#theForm {
-    margin-top: 5px;
 }
 
 .newmessage textarea {
@@ -40,11 +89,10 @@ h1 {
     border-radius: 5px;
     background: transparent;
     outline: none;
-    height: 200px;
+    height: 150px;
     width: 580px;
     color: #fff;
     font-size: 16px;
-
 }
 
 .newmessage input[type ="submit"] {
@@ -64,8 +112,8 @@ h1 {
 
 .newmessage input[type ="submit"]:hover {
     cursor: pointer;
-    background:#3cf30f;
-    color: #ffffff;
+    background: white;
+    color: black;
 }
 
 .newmessage input {
@@ -84,26 +132,10 @@ h1 {
     font-size: 16px;
     }
 
-.value {
-    font-family: sans-serif;
-    font-weight: bolder;
-    padding-top: 5px;
+#save-btn {
+    margin-bottom: 1000px;
 }
-#footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-  }
-  
-  #footer ul {
-      padding: 5px;
-      list-style-type: none;
-      text-align: center;
-      margin: 10px;
-      border-radius: 5px;
-  }
-  
+
   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
       color: rgb(150, 145, 145);
     }
@@ -118,29 +150,16 @@ h1 {
     }
   
   
-  #footer ul li {
-         display: inline;
-  }
-  
-  #footer ul li a {
-           text-decoration: none;
-           text-transform: uppercase;
-           font-family: Arial;
-           font-size: 95%;
-           font-weight: bolder;
-           padding: .2em 1em;
-           color: #f3f4f2;
-           background-color: #5d5e5c; 
-  }
-  
-  #footer ul li a:hover {
-                 color: #050a42;
-                 background-color: #04ef0c; 
-  }
-  
-  .copyright {
-      text-align: center;
-      font-family: sans-serif;
-      font-weight: bold;
-      color: white;
-  }
+    #footer {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 50px;
+        margin-top: 0px;
+      }
+
+      .copyright {
+        text-align: center;
+        font-family: sans-serif;
+        font-weight: bold;
+        color: white;
