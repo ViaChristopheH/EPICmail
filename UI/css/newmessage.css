@@ -27,10 +27,6 @@ nav {
     border-radius: 5px;
 }
 
-/* #sidebar:hover {
-    background: white;
-    color: #6d6d6c;
-} */
 
 #sidebar.active {
     left: 0px;
@@ -163,3 +159,4 @@ a:hover {
         font-family: sans-serif;
         font-weight: bold;
         color: white;
+      }

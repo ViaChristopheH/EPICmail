@@ -59,3 +59,10 @@
     color: black;
   }
   
+  #grp-btn {
+    margin-bottom: 2%;
+  }
+
+  #grp-placeholder {
+    height: 3%;
+  }

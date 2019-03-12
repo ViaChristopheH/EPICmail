@@ -48,9 +48,24 @@ body {
    .msgsubject {
     width: 100%;
     border: 1px solid white;
+    margin-top: 2px;
    }
 
    .msgbody {
       width: 100%;
       border: 1px solid white;
+      margin: 2px 2px;
    }
+
+   .msgfooter {
+       width: 100%;
+       border: 1px solid white;
+       padding-top: 2px;
+       padding-bottom: 1px;
+       margin: 2px;
+   }
+
+.msgfooter img {
+    width:10%;
+    height: 10%;
+}
