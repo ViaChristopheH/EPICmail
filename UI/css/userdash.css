@@ -87,7 +87,58 @@ body.search-box {
 .search-box {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-left: 45%;
+    transform: translate(-50%, -50%);   
+}
+
+.superuserp {
+    background-color: rgb(90, 79, 79);
+    height: 50%;
+    width: 83.5%;
+    margin-left: 16%;
+    border-radius: 15px;
+    margin-top: 1%;
+    opacity: 0.85;
+}
+
+.userprofile {
+    background: url(../images/ProfilePic.jpg) no-repeat center;
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    border-radius: 50%;
+    margin-left: 37%;
+    margin-top:60px; 
+    position: absolute;
+}
+
+.submitbutton {
+    margin-top: 105%;
+    margin-left: -15%;
+}
+
+.userinfo {
+    text-align: left;
+    color: white;
+    font-family: sans-serif;
+    margin-left: 10%;
+    padding-top: 20%;
+    margin-bottom:10%;
+    width: 80%;
+    font-weight: 300;
+    font-size: 22px;
+}
+
+#infocontent {
+    border: 1px solid white;
+    padding: 2%;
+    border-radius: 5px;
     
+}
+
+.search-btn img {
+    height: 25px;
+    width: 25px;
+    float: right;
+    margin-left:245px;
 }

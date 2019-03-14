@@ -1,8 +1,14 @@
 import messages from '../data/messagesRecords'
+import { join } from 'path';
 
 // Create/Send an email
 
 app.post('api/v1/messages', (req, res) => {
+    const schema = {
+        subject: Joi.string().required().min(3),
+        message: Joi.string().min(3).required(),
+        parentMessageId: Joi.
+    }
     
     const message = {
         id: messages.length + 1,

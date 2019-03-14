@@ -53,14 +53,7 @@ body {
         border-bottom-right-radius: 25px; 
     
     }
-    .search-btn img {
-        height: 25px;
-        width: 25px;
-        float: right;
-        margin-left: 200px;
-    }
-    
-    
+        
     h3 {
         position: relative;
     }
