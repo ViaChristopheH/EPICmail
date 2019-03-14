@@ -1,4 +1,4 @@
-import { join } from "path";
+
 
 // GET A specific user by ID
 
@@ -10,8 +10,24 @@ app.post('/api/v1/users', (req, res) => {
 
 // POST/ADD a user (create an account/signup)
 
-app.post('/api/v1/users', (req, res) => {
+app.post('api/v1/users', (req, res) => {
+    const schema = {
+        subject: Joi.string().required().min(3),
+        message: Joi.string().min(3).required(),
+    }
     
+    const message = {
+        id: messages.length + 1,
+        email: req.body.email,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        password: req.body.password
+    };
+
+    users.push(user);
+    res.send(user);
+
+
 })
 
 
