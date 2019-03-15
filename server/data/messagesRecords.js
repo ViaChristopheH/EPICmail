@@ -38,6 +38,15 @@ const messagesRecords = [
     {
         id : 10,
         createdOn : 'Dec 27, 2018',
+        subject : 'Welcome',
+        message : 'Welcome to ANDELA',
+        parentMessageId : 26,
+        status : 'unread'
+    },
+
+    {
+        id : 11,
+        createdOn : 'Dec 28, 2018',
         subject : 'Congratulations',
         message : 'The company would like to congratulate you for the achievements made despite of all circumstances. Keep it up!',
         parentMessageId : 25,

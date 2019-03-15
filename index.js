@@ -2,10 +2,12 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import messagesroutes from './server/routes/messagesroutes';
 
+
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(messagesroutes);
+app.use('/', messagesroutes);
 
 const port = process.env.PORT || 7000;
 

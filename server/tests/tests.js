@@ -1,6 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import app from '../index';
+import server from '../../server
+import app from '../../index';
 
  chai.should();
  chai.use(chaiHttp);
@@ -41,7 +42,7 @@ import app from '../index';
                     .get('/api/v1/messages/6')
                     .end((err, res)=>{
                      res.body.should.be.a('object');
-                     res.body.should.have.property('status').eql(200);
+                     res.body.should.have.property('status').eql(201);
                      res.body.should.have.property('data');
                      res.body.data.should.be.a('array');
                      res.body.data[0].should.have.property('id').eql(6);
@@ -55,4 +56,5 @@ import app from '../index';
         });
      
      });
-     
+	 
+	 

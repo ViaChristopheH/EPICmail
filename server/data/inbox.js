@@ -1,19 +1,19 @@
 const inboxmessages = [
     {
         receiverId : 1,
-        messageId : 4,
+        messageId : 11,
         createdOn : 'Feb 23, 2016'
     },
 
     {
         receiverId : 2,
-        messageId : 5,
+        messageId : 6,
         createdOn : 'March 23, 2016'
     },
 
     {
         receiverId : 3,
-        messageId : 6,
+        messageId : 8,
         createdOn : 'April 23, 2016'
     }
 ]
