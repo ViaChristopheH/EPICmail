@@ -23,14 +23,14 @@ const signUp = (req, res) => {
     res.send(user);
 }
 
-// User Login
+// Login a user
 
 const login = (req, res) => {
     const schema = {
         email: Joi.string().email({ minDomainAtoms: 2 }).required(),
         password: Joi.string().min(8).required().regex(/^[a-zA-Z0-9]{8,30}$/)
     }
-    const user = users.find(u => u.email === parseInt(req.body.email));
+    const user = users.find(u => u.email === req.body.email);
     if(!user) 
     return res.status(404).send('Oops! You are not registered, kindly register to login!')
     return res.send(user);
