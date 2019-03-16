@@ -10,10 +10,10 @@ route.post('/api/v1/messages/', messagefx.sendMail);
 route.get('/api/v1/messages', messagefx.allMails);
 
 // Fetch all unread received emails
-route.get('/api/v1/messages/unread', messagefx.unreadEmail);
+route.get('/api/v1/messages/unread', messagefx.unreadEmails);
 
 // Fetch all sent emails
-route.get('/api/v1/messages/sent', messagefx.sentMail);
+route.get('/api/v1/messages/sent', messagefx.sentMails);
 
 // Fetch a specific email record
 route.get('/api/v1/messages/:id', messagefx.specificEmail);

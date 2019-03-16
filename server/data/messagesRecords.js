@@ -32,7 +32,7 @@ const messagesRecords = [
         subject : 'Confirmation of the participation',
         message : 'We will be there on time',
         parentMessageId : 20,
-        status : 'draft'
+        status : 'sent'
     },
     
     {
@@ -41,7 +41,7 @@ const messagesRecords = [
         subject : 'Welcome',
         message : 'Welcome to ANDELA',
         parentMessageId : 26,
-        status : 'unread'
+        status : 'read'
     },
 
     {

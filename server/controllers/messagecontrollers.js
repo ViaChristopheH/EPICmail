@@ -1,10 +1,11 @@
 import messages from '../data/messagesRecords';
-import Joi from 'joi';
+import sent from '../data/sentmessages';
 import inbox from '../data/inbox';
+import Joi from 'joi';
 
 // Create/Send an email
 
-const sendMail = ((req, res) => {
+const sendMail = (req, res) => {
     const schema = {
         subject: Joi.string().required().min(3),
         message: Joi.string().min(3).required(),
@@ -26,50 +27,82 @@ const sendMail = ((req, res) => {
         status: 400,
         "error": {"message": error.details[0].message}
     }) )
-    
-    
+ 
+}
 
-})
+// Fetch all received mails
 
-// Fetch all received emails
-
-const allMails = ((req, res) => {
-    res.send(messages);
-});
-
-// Fetch all unread received emails
-
-const unreadEmail = (req, res) => {
-    let unreadmessages = [];
+const allMails = (req, res) => {
+    const allReceived = [];
     inbox.forEach((inbox) => {
-     const message = messages.find(m => m.messageId == inbox.messageId);
-     oonsole.log('unreadmessage')
-    //  if(message.status === 'sent'){
-    //      unreadmessages.push(message);
-    //      }
-    //  })
-  
+     const message = messages.find(m => m.id == inbox.messageId);   
     
-   // const message = messages.find(m => m.status === 'unread');
-    if(!message) 
+    if(message) 
     {
-        return res.status(404).send('The message with the given ID was not found')
-    }else{
-        return res.send(unreadmessages);
+        allReceived.push(message) 
     }
+    })
+    if(allReceived.length == 0) {
+        res.send({
+            status: 404,
+            error: "You have no received message"
+        })
     }
-  
+    res.send({
+        status: 200,
+        data: allReceived
+    })
+};
+
+// Fetch all received unread emails
+
+const unreadEmails = (req, res) => {
+    const unreadmessages = [];
+    inbox.forEach((inbox) => {
+     const message = messages.find(m => m.id == inbox.messageId);   
+    if(message) 
+    {
+     if(message.status == 'sent') {
+        unreadmessages.push(message) 
+     }
+    }
+    })
+
+    if(unreadmessages.length == 0) {
+        res.send({
+            status: 404,
+            error:"Message not found!"
+        })
+    }
+    res.send({
+        status: 200,
+        data: unreadmessages
+    })
+}
 
 // Fetch all sent emails
 
-const sentMail = (req, res) => {
-    const message = messages.find(m => m.status === 'sent');
-    if(!message) 
-    return res.status(404).send('The message with the given ID was not found')
-    return res.send(message);
-    };
-  
-// GET A specific message by ID
+const sentMails = (req, res) => {
+    const allSent = [];
+    sent.forEach((sent) => {
+     const message = messages.find(m => m.id == sent.messageId);   
+    if(message) 
+    {
+        allSent.push(message) 
+    }
+    })
+    if(allSent.length == 0) {
+        res.send({
+            status: 404,
+            error: "You have no sent message"
+        })
+    }
+    res.send({
+        status: 200,
+        data: allSent
+    })
+};
+// Fetch a specific email record
 
 const specificEmail = (req, res) => {
     const message = messages.find(m => m.id === parseInt(req.params.id));
@@ -78,10 +111,10 @@ const specificEmail = (req, res) => {
     return res.send(message);
     };
   
-// DELETE a messsage
+// DELETE a specific email
 
 const deleteAmail = (req, res) => {
-    const message = messages.find(m => m.id === parseInt(req.params.id));
+    const message = (messages.find(m => m.id === parseInt(req.params.id)));
     if(!message) 
     return res.status(404).send('The message with the given ID was not found')
     
@@ -93,4 +126,4 @@ const deleteAmail = (req, res) => {
     
 };
 
-export default { specificEmail, deleteAmail, allMails, sentMail, unreadEmail, sendMail };
+export default { sendMail, allMails, unreadEmails, sentMails, specificEmail,deleteAmail }
