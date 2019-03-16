@@ -1,20 +1,14 @@
 import users from '../data/users';
 import Joi from 'joi';
 
-// GET A specific user by ID
+// Create a user account (signup)
 
-const getUser = ((req, res) => {
-    const user = users.find(u => u.id === parseInt(req.params.id));
-    if(!user)res.status(404).send('The user with the given ID was not found')
-    res.send(user)
-});
-
-// POST/ADD a user (create an account/signup)
-
-const signUp = ((req, res) => {
+const signUp = (req, res) => {
     const schema = {
-        subject: Joi.string().required().min(3),
-        message: Joi.string().min(3).required(),
+        email: Joi.string().email({ minDomainAtoms: 2 }).required(),
+        firstname:Joi.string().required().alphanum().min(3).max(20),
+        lastname:Joi.string().required().alphanum().min(3).max(20),
+        password: Joi.string().min(8).required().regex(/^[a-zA-Z0-9]{8,30}$/)
     }
     
     const user = {
@@ -27,25 +21,19 @@ const signUp = ((req, res) => {
 
     users.push(user);
     res.send(user);
+}
 
+// User Login
 
-})
+const login = (req, res) => {
+    const schema = {
+        email: Joi.string().email({ minDomainAtoms: 2 }).required(),
+        password: Joi.string().min(8).required().regex(/^[a-zA-Z0-9]{8,30}$/)
+    }
+    const user = users.find(u => u.email === parseInt(req.body.email));
+    if(!user) 
+    return res.status(404).send('Oops! You are not registered, kindly register to login!')
+    return res.send(user);
+    };
 
-
-// UPDATE a user
-app.post('/api/v1/users', (req, res) => {
-
-})
-
-// DELETE a user
-
-const deleteUSer = ((req, res) => {
-    const user = users.find(u => u.id === parseInt(req.params.id));
-    if(!user) return res.status(404).send('The user with the given ID was not found')
-    res.send(user);
-
-    const index = users.indexOf(user);
-    users.splice(index, 1);
-});
-
-export default { getUser, signUp, deleteUSer };
+export default { login, signUp };

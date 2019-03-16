@@ -1,20 +1,20 @@
+// By importing the independencies for testing
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import server from '../../server
 import app from '../../index';
 
+// By configuring chai
  chai.should();
  chai.use(chaiHttp);
 
- describe('get all messages records', () => {
+ // The test to get all messages records
 
+ describe('get all messages records', () => {
 		chai.request(app)
 		.post('/api/v1/messages')
 		.end((err, res)=>{
-			
+			})
 		})
-	
-	})
 
 	it('/GET /messages', (done) =>{
 	 chai.request(app)
@@ -34,6 +34,8 @@ import app from '../../index';
 		 })
  
 	});
+
+// The test to fetch a specific email record
 
     describe('fetch a specific email record', ()=>{
         it('/GET /messages/<message-id>', (done)=>{
@@ -55,6 +57,89 @@ import app from '../../index';
      
         });
      
-     });
-	 
-	 
+	 });
+
+	 // The test to create an email
+
+	 describe('Create an email', ()=>{
+		it('/POST /messages', (done)=>{
+			const mailEntry = {
+			   subject: "Request for approval",
+			   message: "I would like to kindly check out the authenticity of the herewith attached documents and then aprove it for a final signature"
+			}
+   
+			chai.request(app)
+				.post('/api/v1/messages')
+				.send(mailEntry)
+				.end((err, res)=>{
+				   res.body.should.be.a('object');
+				   res.body.should.have.property('status').eql(201);
+				   res.body.should.have.property('data');
+				   res.body.data.should.be.a('array');
+				   done();
+				})
+		})
+   
+		it('it should not create an email --when subject is not included ', (done)=>{
+			const mailEntry = {
+			   subject: "Request for approval",
+			   message: "I would like to kindly check out the authenticity of the herewith attached documents and then aprove it for a final signature"
+			}
+			chai.request(app)
+				.post('/api/v1/messages')
+				.send(mailEntry)
+				.end((err, res)=>{
+				   res.body.should.be.a('object');
+				   res.body.should.have.property('status').eql(400);
+				   done();
+				})
+		});
+   
+		it('it should not create an email --when subject is a not a string or subject is not at minimum 3 characters', (done)=>{
+			const mailEntry = {
+			   subject: 1,
+			   message: "I would like to kindly check out the authenticity of the herewith attached documents and then aprove it for a final signature"
+		}
+   
+			chai.request(app)
+				.post('/api/v1/messages')
+				.send(mailEntry)
+				.end((err, res)=>{
+					res.body.should.be.a('object');
+				   res.body.should.have.property('status').eql(400);
+				   done();
+				})
+		});
+       
+		it('it should not create a message --when message is not defined', (done)=>{
+			const mailEntry = {
+			   subject: "Request for approval"
+			}
+   
+			chai.request(app)
+				.post('/api/v1/messages')
+				.send(entryMail)
+				.end((err, res)=>{
+					res.body.should.be.a('object');
+				   res.body.should.have.property('status').eql(400);
+				   done();
+				})
+		});
+   
+   
+		it('it should not create a message --when message is not a string or at minimum 3 characters', (done)=>{
+			const mailEntry = {
+				subject: "Request for approval",
+				message: "I"
+			}
+   
+			chai.request(app)
+				.post('/api/v1/messages')
+				.send(mailEntry)
+				.end((err, res)=>{
+					res.body.should.be.a('object');
+				   res.body.should.have.property('status').eql(400);
+				   done();
+				})
+		});
+	})

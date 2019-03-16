@@ -1,3 +1,5 @@
+// This is to allow babel to compile our codes as we are writing these codes in ES6
+
 { 
     "presets": ["@babel/preset-env"] 
 }
