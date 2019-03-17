@@ -143,3 +143,9 @@ import app from '../../index';
 				})
 		});
 	})
+
+	// Testing the login
+	// Testin the signup
+	// Testing the sent messages
+	// Testing the received messages
+	// Testing the inbox messages

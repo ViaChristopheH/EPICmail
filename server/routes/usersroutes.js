@@ -6,9 +6,9 @@ const route = express.Router();
 
 
 // create a user account
-route.post('/api/v1/auth/signup', userfx.signUp);
+route.post('/signup', userfx.signUp);
 
 // Login a user
-route.post('/api/v1/auth/login', userfx.login);
+route.post('/login', userfx.login);
 
 export default route;
