@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false}));
 // By registering the routes in app
 app.use('/api/v1/messages', messagesroutes);
 app.use('/api/v1/auth', usersroutes)
-app.use('epicmail/api/documentation', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+app.use('/epicmail/api/documentation', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 // By starting the server
 app.listen(port, () => console.log('The App is live on port 7000...'));
