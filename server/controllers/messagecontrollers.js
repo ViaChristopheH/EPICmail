@@ -111,7 +111,7 @@ const specificEmail = (req, res) => {
     return res.send(message);
     };
   
-// DELETE a specific email
+// DELETE a specific email record
 
 const deleteAmail = (req, res) => {
     const message = (messages.find(m => m.id === parseInt(req.params.id)));
