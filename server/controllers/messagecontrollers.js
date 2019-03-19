@@ -21,11 +21,14 @@ const sendMail = (req, res) => {
         };
     
         messages.push(message);
-        res.send(message);
+        res.status(201).send({
+            status: 201,
+            data: [message]
+        });
     
-    }).catch(error => res.send({
+    }).catch(error => res.status(400).send({
         status: 400,
-        "error": {"message": error.details[0].message}
+        error: {"message": error.details[0].message}
     }) )
  
 }
@@ -105,10 +108,26 @@ const sentMails = (req, res) => {
 // Fetch a specific email record
 
 const specificEmail = (req, res) => {
-    const message = messages.find(m => m.id === parseInt(req.params.id));
-    if(!message) 
-    return res.status(404).send('The message with the given ID was not found')
-    return res.send(message);
+    const message = messages.find(m => m.id == parseInt(req.params.id));
+    if(!message) {
+        return res.status(404)
+        .send({
+            status: 404,
+            error: 'The message with the given ID was not found'
+        });
+    }
+    return res.status(200).send({
+        status: 200,
+        data: [{
+            id: 6,
+            createdOn : 'Nov 7, 2018',
+            subject : 'Completion of the work',
+            message :'I would like to kindly let you know that the requested work is now completed. Thank you!',
+            parentMessageId : 3,
+            status : 'sent'
+
+        }]
+    });
     };
   
 // DELETE a specific email record
@@ -116,12 +135,18 @@ const specificEmail = (req, res) => {
 const deleteAmail = (req, res) => {
     const message = (messages.find(m => m.id === parseInt(req.params.id)));
     if(!message) 
-    return res.status(404).send('The message with the given ID was not found')
+    return res.status(404).send({
+        status: 404,
+        error:'The message with the given ID was not found'   
+    })
     
     const index = messages.indexOf(message);
-    messages.splice(index, 1);
+    messages.splice(index, 6);
 
-    return res.send(message);
+    return res.send({
+        status: 200,
+        data:[message]
+    });
 
     
 };

@@ -4,7 +4,7 @@ import messagefx from '../controllers/messagecontrollers';
 const route = express.Router();
 
 // create/send an email
-route.post('/api/v1/messages/', messagefx.sendMail);
+route.post('/', messagefx.sendMail);
 
 // Fetch all received emails
 route.get('/', messagefx.allMails);
