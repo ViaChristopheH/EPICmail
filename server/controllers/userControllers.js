@@ -1,6 +1,6 @@
 import users from '../data/users';
 import Joi from 'joi';
-
+import generateUserToken from '../middleware/authentication';
 // Create a user account (signup)
 
 const signUp = (req, res) => {
@@ -30,10 +30,11 @@ const login = (req, res) => {
         email: Joi.string().email({ minDomainAtoms: 2 }).required(),
         password: Joi.string().min(8).required().regex(/^[a-zA-Z0-9]{8,30}$/)
     }
-    const user = users.find(u => u.email === parseInt(req.body.email));
+    const user = users.find(u => u.email === req.body.email);
     if(!user) 
     return res.status(404).send('Oops! You are not registered, kindly register to login!')
-    return res.send(user);
+    const token=generateUserToken(user);
+    return res.send({user,token});
     };
 
 export default { login, signUp };
