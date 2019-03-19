@@ -3,6 +3,7 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../../index';
 
+
 // By configuring chai
  chai.should();
  chai.use(chaiHttp);
@@ -55,10 +56,20 @@ import app from '../../index';
                      done();
                     })
      
-        });
+		  });
+		  
+		//   When the fetched email is not found
+		  it('should not fetch a specific email', (done) => {
+			chai.request(app)
+			  .get('/api/v1/messages/11')
+			  .end((err, res) => {
+				 res.body.should.be.a('object');
+				 res.body.should.have.property('status').eql(404);
+				 done();
+			  });
+		 });
+	  });
      
-	 });
-
 	 // The test to create an email
 
 	 describe('Create an email', ()=>{
@@ -67,12 +78,11 @@ import app from '../../index';
 			   subject: "Request for approval",
 			   message: "I would like to kindly check out the authenticity of the herewith attached documents and then aprove it for a final signature"
 			}
-   
 			chai.request(app)
 				.post('/api/v1/messages')
 				.send(mailEntry)
 				.end((err, res)=>{
-				   res.body.should.be.a('object');
+				   res.body.should.be.an('object');
 				   res.body.should.have.property('status').eql(201);
 				   res.body.should.have.property('data');
 				   res.body.data.should.be.a('array');
@@ -144,8 +154,39 @@ import app from '../../index';
 		});
 	})
 
-	// Testing the login
-	// Testin the signup
-	// Testing the sent messages
-	// Testing the received messages
-	// Testing the inbox messages
+	// Testing the received unread messages
+
+	describe('/get all received unread messages', () => {
+		it('should fetch all received unread messages', (done) => {
+		  chai.request(app)
+			 .get('/api/v1/messages/unread')
+			 .end((err, res) => {
+				res.body.should.be.an('object');
+				res.body.should.have.property('status').eql(200);
+				done();
+			 });
+		});
+	 });
+
+	// The test to delete an email
+	describe('/delete an email', () => {
+		it('should delete a specific email', (done) => {
+		  chai.request(app)
+			 .delete('/api/v1/messages/6')
+			 .end((err, res) => {
+				res.body.should.be.an('object');
+				res.body.should.have.property('status').eql(200);
+				done();
+			 });
+		});
+	 
+		it('should not delete a message', (done) => {
+		  chai.request(app)
+			 .delete('/api/v1/messages/9')
+			 .end((err, res) => {
+				res.body.should.be.an('object');
+				res.body.should.have.property('status').eql(404);
+				done();
+			 });
+		});
+	 });
