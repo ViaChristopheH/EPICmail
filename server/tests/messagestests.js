@@ -11,17 +11,12 @@ import app from '../../index';
  // The test to get all messages records
 
  describe('get all messages records', () => {
-		chai.request(app)
-		.post('/api/v1/messages')
-		.end((err, res)=>{
-			})
-		})
-
+		
 	it('/GET /messages', (done) =>{
 	 chai.request(app)
 		 .get('/api/v1/messages')
 		 .end((err, res)=>{
-			res.body.should.be.a('object');
+			res.body.should.be.an('object');
 			res.body.should.have.property('status').eql(200);
 			res.body.should.have.property('data');
 			res.body.data.should.be.an('array');
@@ -44,15 +39,11 @@ import app from '../../index';
                  chai.request(app)
                     .get('/api/v1/messages/6')
                     .end((err, res)=>{
-                     res.body.should.be.a('object');
-                     res.body.should.have.property('status').eql(201);
+							res.status.should.be.equal(200);
+                     res.body.should.be.an('object');
+                     res.body.should.have.property('status').eql(200);
                      res.body.should.have.property('data');
-                     res.body.data.should.be.a('array');
-                     res.body.data[0].should.have.property('id').eql(6);
-                     res.body.data[0].should.have.property('createdOn').eql('Nov 7, 2018');
-                     res.body.data[0].should.have.property('subject').eql('Completion of the work');
-                     res.body.data[0].should.have.property('message').eql('I would like to kindly let you know that the requested work is now completed. Thank you!');
-                     res.body.data[0].should.have.property('status');
+                     res.body.data.should.be.an('array');
                      done();
                     })
      
@@ -61,9 +52,10 @@ import app from '../../index';
 		//   When the fetched email is not found
 		  it('should not fetch a specific email', (done) => {
 			chai.request(app)
-			  .get('/api/v1/messages/11')
+			  .get('/api/v1/messages/113434')
 			  .end((err, res) => {
-				 res.body.should.be.a('object');
+				 res.status.should.be.equal(404);
+				 res.body.should.be.an('object');
 				 res.body.should.have.property('status').eql(404);
 				 done();
 			  });
@@ -82,24 +74,26 @@ import app from '../../index';
 				.post('/api/v1/messages')
 				.send(mailEntry)
 				.end((err, res)=>{
+					res.status.should.be.equal(201);
 				   res.body.should.be.an('object');
 				   res.body.should.have.property('status').eql(201);
 				   res.body.should.have.property('data');
-				   res.body.data.should.be.a('array');
+				   res.body.data.should.be.an('array');
 				   done();
 				})
 		})
    
 		it('it should not create an email --when subject is not included ', (done)=>{
 			const mailEntry = {
-			   subject: "Request for approval",
+			   subject: "",
 			   message: "I would like to kindly check out the authenticity of the herewith attached documents and then aprove it for a final signature"
 			}
 			chai.request(app)
 				.post('/api/v1/messages')
 				.send(mailEntry)
 				.end((err, res)=>{
-				   res.body.should.be.a('object');
+					res.status.should.be.eql(400)
+				   res.body.should.be.an('object');
 				   res.body.should.have.property('status').eql(400);
 				   done();
 				})
@@ -123,13 +117,15 @@ import app from '../../index';
        
 		it('it should not create a message --when message is not defined', (done)=>{
 			const mailEntry = {
-			   subject: "Request for approval"
+				subject: "Request for approval",
+				message: ""
 			}
    
 			chai.request(app)
 				.post('/api/v1/messages')
-				.send(entryMail)
+				.send(mailEntry)
 				.end((err, res)=>{
+					res.status.should.be.eql(400)
 					res.body.should.be.a('object');
 				   res.body.should.have.property('status').eql(400);
 				   done();
@@ -174,7 +170,9 @@ import app from '../../index';
 		  chai.request(app)
 			 .delete('/api/v1/messages/6')
 			 .end((err, res) => {
+				res.status.should.be.eql(200);
 				res.body.should.be.an('object');
+				res.body.should.have.property('data');
 				res.body.should.have.property('status').eql(200);
 				done();
 			 });
@@ -182,11 +180,13 @@ import app from '../../index';
 	 
 		it('should not delete a message', (done) => {
 		  chai.request(app)
-			 .delete('/api/v1/messages/9')
+			 .delete('/api/v1/messages/966789')
 			 .end((err, res) => {
+				res.status.should.be.eql(404);
 				res.body.should.be.an('object');
 				res.body.should.have.property('status').eql(404);
 				done();
 			 });
 		});
 	 });
+	});

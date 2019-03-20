@@ -10,8 +10,16 @@ chai.use(chaiHttp);
 
 describe('POST/auth/signup',() =>{
     it('It should be an object', (done) => {
-      chai.request(app)
+        const newUser = {
+            firstname: "Christophe",
+            lastname: "Habimana",
+            email: "viachris.hab@gmail.com",
+            password: "#@12345abcd"
+        }
+        chai.request(app)
         .post('/api/v1/auth/signup')
+        .send(newUser)
+        .then(res)
         .end((err, res) => {
           result.body.should.be.an('object');
           done();
@@ -43,8 +51,8 @@ describe('POST/auth/signup',() =>{
         .post('/api/v1/auth/signup')
         .send({ email: 'viachris.hab@gmail.cm', password: '#@12345abcd', firstname: 'c25', lastname: 'Habimana' })
         .end((err, res) => {
-          result.body.should.have.property('status').with.equal(406);
-          result.body.should.have.property('errors').with.lengthOf(3);
+          res.body.should.have.property('status').with.equal(406);
+          res.body.should.have.property('errors').with.lengthOf(3);
           done();
         });
     })
@@ -54,8 +62,8 @@ describe('POST/auth/signup',() =>{
         .post('/api/v1/auth/auth')
         .send({ email: 'viachris.hab@gmail.com', password: '#@12345abcd', firstName: 'Christophe', lastName: 'Habimana' })
         .end((err, res) => {
-          result.body.should.have.property('status').with.equal(406);
-          result.body.should.have.property('errors').with.lengthOf(1);
+          res.body.should.have.property('status').with.equal(406);
+          res.body.should.have.property('errors').with.lengthOf(1);
           done();
         });
     });
@@ -65,8 +73,8 @@ describe('POST/auth/signup',() =>{
         .post('/api/v1/auth/signup')
         .send({ email: 'viachris.hab@gmail.com', password: '#@12345abcd', firstName: 'Christophe', lastName: 'Habimana' })
         .end((err, res) => {
-          result.body.should.have.property('status').with.equal(200);
-          result.body.should.have.nested.property('data[0].token').to.be.a('String');
+          res.body.should.have.property('status').with.equal(200);
+          res.body.should.have.nested.property('data[0].token').to.be.a('String');
           done();
         });
     });
@@ -79,7 +87,7 @@ describe('login', () => {
     chai.request(app)
       .post('/api/v1/auth/login')
       .end((err, res) => {
-        result.body.should.be.an('object');
+        res.body.should.be.an('object');
         done();
       });
   });
@@ -88,7 +96,8 @@ describe('login', () => {
     chai.request(app)
       .post('/api/v1/auth/login')
       .end((err, res) => {
-        result.body.should.have.property('status');
+        res
+        res.body.should.have.property('status');
         done();
       });
   });
@@ -98,7 +107,7 @@ describe('login', () => {
       .post('/api/v1/auth/login')
       .send({ email: 'viachris.hab@gmail.com', password: '@12345' })
       .end((err, res) => {
-        result.body.should.have.property('status').with.equal(406);
+        res.body.should.have.property('status').with.equal(406);
         done();
       });
   });
@@ -108,7 +117,7 @@ describe('login', () => {
       .post('/api/v1/auth/login')
       .send({ email: 'viachris.hab@gmai.cm', password: '#@12345abcd' })
       .end((err, res) => {
-        result.body.should.have.property('status').with.equal(406);
+        res.body.should.have.property('status').with.equal(406);
         done();
       });
   });
@@ -118,7 +127,7 @@ describe('login', () => {
       .post('/api/v1/auth/login')
       .send({ email: '', password: '' })
       .end((err, res) => {
-        result.body.should.have.property('status').with.equal(406);
+        res.body.should.have.property('status').with.equal(406);
         done();
       });
   });
@@ -128,7 +137,7 @@ describe('login', () => {
       .post('/api/v1/auth/login')
       .send({ email: 'viachris.hab@gmail.com', password: '#@12345abcd' })
       .end((err, res) => {
-        result.body.should.have.property('status').with.equal(200);
+        res.body.should.have.property('status').with.equal(200);
         done();
       });
   });
@@ -138,7 +147,7 @@ describe('login', () => {
       .post('/api/v1/auth/login')
       .send({ email: 'viachris.hab@gmail.com', password: '#@12345abcd' })
       .end((err, res) => {
-        result.body.should.have.property('data').have.property('token');
+        res.body.should.have.property('data').have.property('token');
         done();
       });
   });
