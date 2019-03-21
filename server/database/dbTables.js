@@ -9,7 +9,6 @@ const databaseTables = () => {
     password VARCHAR(250) NOT NULL,
     first_name  VARCHAR(25) NOT NULL,
     last_name VARCHAR(25) NOT NULL,
-    id_group INT
     )`
 
     const messagesTable = `
