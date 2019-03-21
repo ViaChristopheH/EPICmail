@@ -112,43 +112,43 @@
 //       });
 //   });
 
-  it('It should not login when email is not valid',(done) => {
-    chai.request(app)
-      .post('/api/v1/auth/login')
-      .send({ email: 'viachris.hab@gmai.cm', password: '#@12345abcd' })
-      .end((err, res) => {
-        res.body.should.have.property('status').with.equal(406);
-        done();
-      });
-  });
+//   it('It should not login when email is not valid',(done) => {
+//     chai.request(app)
+//       .post('/api/v1/auth/login')
+//       .send({ email: 'viachris.hab@gmai.cm', password: '#@12345abcd' })
+//       .end((err, res) => {
+//         res.body.should.have.property('status').with.equal(406);
+//         done();
+//       });
+//   });
 
-  it('It should not login when the required text input is empty',(done) => {
-    chai.request(app)
-      .post('/api/v1/auth/login')
-      .send({ email: '', password: '' })
-      .end((err, res) => {
-        res.body.should.have.property('status').with.equal(406);
-        done();
-      });
-  });
+//   it('It should not login when the required text input is empty',(done) => {
+//     chai.request(app)
+//       .post('/api/v1/auth/login')
+//       .send({ email: '', password: '' })
+//       .end((err, res) => {
+//         res.body.should.have.property('status').with.equal(406);
+//         done();
+//       });
+//   });
 
-  it('should login',(done) => {
-    chai.request(app)
-      .post('/api/v1/auth/login')
-      .send({ email: 'viachris.hab@gmail.com', password: '#@12345abcd' })
-      .end((err, res) => {
-        res.body.should.have.property('status').with.equal(200);
-        done();
-      });
-  });
+//   it('should login',(done) => {
+//     chai.request(app)
+//       .post('/api/v1/auth/login')
+//       .send({ email: 'viachris.hab@gmail.com', password: '#@12345abcd' })
+//       .end((err, res) => {
+//         res.body.should.have.property('status').with.equal(200);
+//         done();
+//       });
+//   });
 
-  it('should have token',(done) => {
-    chai.request(app)
-      .post('/api/v1/auth/login')
-      .send({ email: 'viachris.hab@gmail.com', password: '#@12345abcd' })
-      .end((err, res) => {
-        res.body.should.have.property('data').have.property('token');
-        done();
-      });
-  });
-});
+//   it('should have token',(done) => {
+//     chai.request(app)
+//       .post('/api/v1/auth/login')
+//       .send({ email: 'viachris.hab@gmail.com', password: '#@12345abcd' })
+//       .end((err, res) => {
+//         res.body.should.have.property('data').have.property('token');
+//         done();
+//       });
+//   });
+// });
