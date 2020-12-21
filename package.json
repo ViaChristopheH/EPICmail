@@ -10,6 +10,7 @@
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.4",
     "@babel/register": "^7.0.0",
+    "bcrypt": "^3.0.5",
     "body-parser": "^1.18.3",
     "coveralls": "^3.0.3",
     "dotenv": "^7.0.0",
@@ -41,7 +42,7 @@
     "local": "nodemon --exec babel-node index.js",
     "test": "nyc --reporter=html --reporter=text --timeout=30000 mocha  --require @babel/register ./server/tests/* --exit",
     "coverage": "npm test && nyc report --reporter=text-lcov | coveralls ",
-    "dbEngine": "babel-node database/dbindex.js"
+    "dbEngine": "babel-node server/database/dbindex.js"
   },
   "repository": {
     "type": "git",
